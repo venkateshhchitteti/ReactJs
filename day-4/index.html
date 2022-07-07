@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta name="viewport" content="width=device-width,itial scale=1">
+        <style>
+            *{
+                box-sizing: border-box;
+            }
+            input[type=text], select, textarea {
+                width:100%;
+                padding: 10px;
+                border: 1px solid black;
+                border-radius: 2px;
+                resize: both;
+                
+            }
+            label{
+                padding: 12px 12px 12px 0;
+                display:inline-block;
+            }
+            .container{
+                border-radius: 5px;
+                background-color: blanchedalmond;
+                padding: 10px;
+            }
+            .col-25{
+                float: left;
+                width:25%;
+                margin-top: 0px;
+            }
+            .col-75{
+                float: left;
+                width:75%;
+                margin-top: 5px;
+                margin-bottom: 5px;
+                margin-left: 5px;
+            }
+            .country{
+                float: left;
+                
+            }
+            .row::after{
+                content:" ",
+                display:table,
+                clear:both;
+            }
+            @media screen and (max-width:600px){
+                .col-25,.col-75,input[type=submit]{
+                    width:100%;
+                    margin-top: 0px;
+                }
+            }
+        </style>
+    </head>
+    <body>
+        <h2>Responsive Form</h2>
+        <p>Resize the browser window to see the effect. When the screen is less than 600px wide, 
+            make the two columns stack on top of each other instead of next to each other.</p>
+        <div class="container">
+            <form>
+                <div class="row">
+                    <div class="col-25">
+                        <label>FirstName:</label>
+                    </div>
+                    <div class="col-75">
+                        <input type="text" id="fn" placeholder="type urs firstname here..">
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-25">
+                        <label>LastName:</label>
+                    </div>
+                    <div class="col-75">
+                        <input type="text" id="ln" placeholder="type urs lastname here..">
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-25">
+                        <label>Country:</label>
+                    </div >
+                    <div class="col=75">
+                       <select id="country" width="75%" name="country" placeholder="select u r country name">
+                        <option value="India">India</option>
+                        <option value="Russia">Russia</option>
+                        <option value="France">France</option>
+                       </select>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-25">
+                        <label>Subject:</label>
+                    </div>
+                    <div class="col-75" >
+                        <textarea id="subject" name="subject" placeholder="enter something here.." 
+                        height="200px" width="200px">
+                        </textarea>
+                    </div>
+                </div>
+                <div class="row">
+                    <button>Submit</button>
+                </div>
+            </form>
+        </div>
+    </body>
+</html>
