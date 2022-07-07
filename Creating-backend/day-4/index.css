@@ -1,0 +1,48 @@
+
+*{
+    box-sizing: border-box;
+}
+input[type=text], select, textarea {
+    width:100%;
+    padding: 10px;
+    border: 1px solid black;
+    border-radius: 2px;
+    resize: both;
+    
+}
+label{
+    padding: 12px 12px 12px 0;
+    display:inline-block;
+}
+.container{
+    border-radius: 5px;
+    background-color: blanchedalmond;
+    padding: 10px;
+}
+.col-25{
+    float: left;
+    width:25%;
+    margin-top: 0px;
+}
+.col-75{
+    float: left;
+    width:75%;
+    margin-top: 5px;
+    margin-bottom: 5px;
+    margin-left: 5px;
+}
+.country{
+    float: left;
+    
+}
+.row:after {
+    content: "";
+    display: table;
+    clear: both;
+}
+@media screen and (max-width:600px){
+    .col-25,.col-75,input[type=submit]{
+        width:100%;
+        margin-top: 0px;
+    }
+}
