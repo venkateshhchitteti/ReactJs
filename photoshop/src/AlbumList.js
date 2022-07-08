@@ -1,4 +1,5 @@
 import { useState } from "react";
+import './AlbumList.css';
 function AlbumList() {
     let [photos, setPhotos] = useState([]); //in order to trigger a re-render , use state
     if (!photos.length) {
