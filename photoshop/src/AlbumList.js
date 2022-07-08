@@ -2,6 +2,7 @@ import { useState } from "react";
 import './AlbumList.css';
 function AlbumList() {
     let [photos, setPhotos] = useState([]); //in order to trigger a re-render , use state
+    
     if (!photos.length) {
         getAlbums();
     }
@@ -12,16 +13,21 @@ function AlbumList() {
     }
     return (
         <div>
+            <input placeholder="Album Id"></input><button>Search</button>
             <table>
                 <thead>
-                   <tr> <td>Title</td>
+                   <tr>
+                    <td>S.No</td> 
+                    <td>Title</td>
                     <td>URL</td></tr>
                 </thead>
                 <tbody>
                     {
                         photos.map(function (photo) {
-                            return <tr><td>{photo.title}</td>
-                                <td>{photo.url}</td></tr>
+                            return <tr>
+                                <td></td>
+                                <td>{photo.title}</td>
+                                <td><a href={photo.url}>click here</a></td></tr>
                         })
                     }</tbody>
             </table>
