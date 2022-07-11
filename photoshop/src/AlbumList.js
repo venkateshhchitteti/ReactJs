@@ -8,14 +8,14 @@ function AlbumList() {
         // getAlbums();
     }
     async function getAlbums() {
-        photos = await (await fetch("https://jsonplaceholder.typicode.com/photos?_page=1&albumId="+document.getElementById('searchtext'))).json();//why twice
+        photos = await (await fetch("https://jsonplaceholder.typicode.com/photos?_page=1&albumId="+document.getElementById('searchtext').value)).json();//why twice
         console.log(photos);
         setPhotos(photos);
     }
     return (
         <div>
             <Counter count={photos.length}></Counter>
-            <input placeholder="Album Id"></input><button onClick={getAlbums}>Search</button>
+            <input placeholder="Album Id" id='searchtext'></input><button onClick={getAlbums}>Search</button>
             <table>
                 <thead>
                    <tr>
