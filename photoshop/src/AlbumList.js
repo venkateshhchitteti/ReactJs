@@ -1,23 +1,24 @@
 import { useState } from "react";
 import './AlbumList.css';
+import Counter from "./Counter";
 function AlbumList() {
     let [photos, setPhotos] = useState([]); //in order to trigger a re-render , use state
     
     if (!photos.length) {
-        getAlbums();
+        // getAlbums();
     }
     async function getAlbums() {
-        photos = await (await fetch("https://jsonplaceholder.typicode.com/photos?_page=1")).json();//why twice
+        photos = await (await fetch("https://jsonplaceholder.typicode.com/photos?_page=1&albumId="+document.getElementById('searchtext'))).json();//why twice
         console.log(photos);
         setPhotos(photos);
     }
     return (
         <div>
-            <input placeholder="Album Id"></input><button>Search</button>
+            <Counter count={photos.length}></Counter>
+            <input placeholder="Album Id"></input><button onClick={getAlbums}>Search</button>
             <table>
                 <thead>
                    <tr>
-                    <td>S.No</td> 
                     <td>Title</td>
                     <td>URL</td></tr>
                 </thead>
@@ -25,7 +26,6 @@ function AlbumList() {
                     {
                         photos.map(function (photo) {
                             return <tr>
-                                <td></td>
                                 <td>{photo.title}</td>
                                 <td><a href={photo.url}>click here</a></td></tr>
                         })
