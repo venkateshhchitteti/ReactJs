@@ -8,7 +8,7 @@ function App() {
     <div>
       {/* <AlbumList></AlbumList> */}
       <FormValidation></FormValidation>
-      <FormValidation2></FormValidation2>
+      {/* <FormValidation2></FormValidation2> */}
     </div>
   );
 }
