@@ -1,0 +1,29 @@
+<html>
+    <script>
+        let arr =[1,2,3];
+        function demo2(arr){
+            const firstpart = arr.slice(0,2);
+            console.log(firstpart);
+            const secondpart = arr.slice(1,1);
+            console.log(secondpart);
+            const final = [...firstpart,6,...secondpart];
+            console.log(final);
+        }
+
+        demo2(arr);
+        demo1(arr);
+        function demo1(arr) {
+            console.log(arr);
+        arr.push(5);//updating the exsting array
+        console.log(arr);
+       const newArray =  [...arr,6];//new array created
+        //this is operator created new array
+        //arr.splice(1,6);
+       console.log(arr);
+        console.log(newArray);
+        }
+    </script>
+    <body>
+
+    </body>
+</html>
