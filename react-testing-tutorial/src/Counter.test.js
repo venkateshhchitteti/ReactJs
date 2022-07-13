@@ -24,8 +24,6 @@ test("decrements counter", ()=>{
 });
 
 
-
-
 test("increment counter",()=>{
     console.log('Testing is awesome...');
 });

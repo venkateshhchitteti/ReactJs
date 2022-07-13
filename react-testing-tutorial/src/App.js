@@ -6,8 +6,8 @@ import Todos from './todos';
 function App() {
   return (
     <div >
-     {/* <Counter></Counter> */}
-     <Todos></Todos>
+     <Counter></Counter>
+     {/* <Todos></Todos> */}
     </div>
   );
 }

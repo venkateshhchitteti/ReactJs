@@ -20,6 +20,7 @@ return (
 <button  data-testid="decrement" onClick={decrementCounter}>
 -
 </button>
+<button >reset</button>
 </>
 );
 };
