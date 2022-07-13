@@ -1,0 +1,13 @@
+<html>
+    <script>
+        function foo(a) {
+            console.log(typeof arguments);
+            console.log(Object.keys(arguments));
+            const keys =Object.keys(arguments);
+            keys.forEach(key =>{
+                console.log(arguments[key])
+            })
+        }
+        foo(1,2,3);
+    </script>
+</html>
