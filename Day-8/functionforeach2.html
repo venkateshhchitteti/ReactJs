@@ -1,0 +1,22 @@
+<html>
+
+<head>
+</head>
+
+<body>
+
+</body>
+<script>
+    function attachingdiv(a) {
+        const elements = Object.values(arguments);
+        const bodyTag = document.querySelector('body');
+        elements.forEach(element => {
+            const divTag = document.createElement('div');
+            divTag.innerHTML = element
+            bodyTag.appendChild(divTag)
+        });
+    }
+    attachingdiv(111, 222, 333);
+</script>
+
+</html>

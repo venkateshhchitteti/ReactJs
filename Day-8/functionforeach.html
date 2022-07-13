@@ -1,0 +1,23 @@
+<html>
+    <script>
+        function foo(a){
+            var elements =Object.values(arguments);
+
+            elements.forEach(function(value,index){//callback function
+                console.log('v',value,index)
+            });
+        }
+        foo(111,222,333);
+    </script>
+    <body>
+        <div>
+            111
+        </div>
+        <div>
+            222
+        </div>
+        <div>
+            333
+        </div>
+    </body>
+</html>
