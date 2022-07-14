@@ -1,9 +1,9 @@
-function disp(s1:string):void;
-function disp(n1:number,s1:string):void;
+function display(s1:string):void;
+function display(n1:number,s1:string):void;
 
-function disp(x:any,y?:any):void  {
+function display(x:any,y?:any):void  {
     console.log(x);
     console.log(y);
 }
-disp("abc")
-disp(1,"xyz");
+display("abc")
+display(1,"xyz");

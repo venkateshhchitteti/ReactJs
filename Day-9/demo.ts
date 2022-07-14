@@ -3,7 +3,7 @@ a = 'test';
 
 let b:string;
 b=2;
-function add(a:number, b:number):numberu{
+function add(a:number, b:number):number{
     return a+b;
 }
 
