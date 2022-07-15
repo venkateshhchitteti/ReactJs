@@ -5,7 +5,7 @@ class Shape {
        this.Area = a 
     } 
  } 
- 
+
  class Circle extends Shape { 
     disp():void { 
        console.log("Area of the circle:  "+this.Area) 
