@@ -7,5 +7,4 @@ var Account = /** @class */ (function () {
 }());
 var account1 = new Account(100);
 console.log(account1.amount);
-var date = new Date();
-console.log("Date = " + date);
+

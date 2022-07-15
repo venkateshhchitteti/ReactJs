@@ -1,0 +1,79 @@
+<html>
+
+<head>
+    <title>WebForm</title>
+</head>
+<style>
+    .column {
+        float: left;
+        width: 50%;
+        
+    }
+
+    /* Clear floats after the columns */
+    .row:after {
+        content: "";
+        display: table;
+        clear: both;
+    }
+</style>
+<script>
+    function save(event){
+
+    }
+</script>
+<body>
+    <h1>WebForm</h1>
+    <div class="container">
+        <div class="row">
+            <div class="column">
+                <form>
+                    <label>Title</label><br>
+                    <input id="Title" type="text" placeholder="Enter Title here..." value=""><br>
+                    <label>Route</label><br>
+                    <input id="Route" type="text" placeholder="enter route here..." value=""><br><br>
+                    <label>SelectDocType</label><br>
+                    <input id="SelectDocType" placeholder="enter selcet doc type here..." type="text" value=""><br>
+<label>Module</label><br>
+                    <input id="Module" type="text" placeholder="enter module here..." value=""><br><br>
+                
+            </div>
+            
+            <div class="column"> 
+                <div><button value="submit"  onclick="save(event)">Submit</button></div>
+                <div> <input type="checkbox"> Is Standard</div>
+                <div> <input type="checkbox"> Published</div>
+                <div> <input type="checkbox"> Login Required</div>
+                <div> <input type="checkbox"> Route to SuccessLink</div>
+                <div> <input type="checkbox"> Allow Edit</div>
+                <div> <input type="checkbox"> Allow Print</div>
+                <div> <input type="checkbox"> Allow Delete</div>
+                <div> <input type="checkbox"> Allow Comments</div>
+                <div> <input type="checkbox"> Allow Multiple</div>
+                <div> <input type="checkbox"> Allow Incomplete Forms</div>
+            </div>
+        </div>
+        <ol id="orderList">
+    
+        </ol>
+    </form>
+    </div>
+</body>
+<script >
+    function save() {
+            const payload = {
+                Title: document.getElementById('Title').value,
+                Route: document.getElementById('Route').value,
+                Doctype: document.getElementById('SelectDocType').value,
+                Module: document.getElementById("Module").value
+            }
+            fetch("http://localhost:3000/posts", {
+                method: 'POST',
+                body: JSON.stringify(payload),
+                headers: {
+                    'Content-type': 'application/json'
+                }
+            });
+    }
+</script>
+</html>
