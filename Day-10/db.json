@@ -1,54 +1,11 @@
 {
-  "posts": [
+  "forms": [
     {
-      "id": 1,
-      "title": "json-server",
-      "author": "typicode"
-    },
-    {
-      "Title": "a",
-      "Route": "poonam",
-      "Doctype": "venkateshh",
-      "Module": "working..",
-      "id": 2
-    },
-    {
-      "Title": "",
-      "Route": "",
-      "Doctype": "",
-      "Module": "",
-      "id": 3
-    },
-    {
-      "Title": "WERE",
-      "Route": "WRF",
-      "Doctype": "WRG",
-      "Module": "ERG",
-      "id": 4
-    },
-    {
-      "Title": "c",
-      "Route": "v",
-      "Doctype": "c",
-      "Module": "v",
-      "id": 5
-    },
-    {
-      "Title": "",
-      "Route": "",
-      "Doctype": "",
-      "Module": "",
-      "id": 6
+      "Title": "shsh",
+      "Route": "dkdk",
+      "Doctype": "pwldk",
+      "Module": "dl",
+      "id": 1
     }
-  ],
-  "comments": [
-    {
-      "id": 1,
-      "body": "some comment",
-      "postId": 1
-    }
-  ],
-  "profile": {
-    "name": "typicode"
-  }
+  ]
 }
