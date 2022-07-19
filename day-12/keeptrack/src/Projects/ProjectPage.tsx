@@ -1,4 +1,4 @@
-import { MOCK_PROJECTS } from './MockProjects';
+import { MOCK_PROJECTS } from './Mockprojects';
 
 function ProjectsPage() {
     // return <h1>Projects</h1>
