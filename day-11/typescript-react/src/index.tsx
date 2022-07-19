@@ -8,9 +8,9 @@ import Orderform from "./components/Orderform";
 ReactDOM.render(
     <div>
        <h1>Hello, Welcome to React and TypeScript</h1>
-      <FirstComponent/>
+      {/* <FirstComponent/> */}
       <Orderform></Orderform>
-      <UserComponent name="John Doe" age={26} address="87 Summer St, Boston, MA 02110" dob={new Date()} /> 
+      {/* <UserComponent name="John Doe" age={26} address="87 Summer St, Boston, MA 02110" dob={new Date()} />  */}
     </div>,
     document.getElementById("root")
 )
