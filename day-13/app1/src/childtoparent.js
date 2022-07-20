@@ -9,7 +9,7 @@ function App() {
     const [message, setMessage]=useState('');
     const handleRequest = (request) => {
       if (request.includes("car")) {
-        alert("No");
+        setMessage('set by child');
       }
     };
   
