@@ -4,7 +4,7 @@ import Clock from './main';
 import React from 'react';
 import ReactDOM from 'react-dom/client';
 import DropdownMenu from './Dropdownmenu';
-import Parent from './architechture';
+import Parent from './parenttochild';
 import Parent1 from './childtoparent';
 
 

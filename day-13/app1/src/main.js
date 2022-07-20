@@ -22,7 +22,7 @@ function addMinutes(date, minutes) {
     );
   }
   
-ReactDOM.createRoot(document.getElementById("root")).render(<Clock />);
+// ReactDOM.createRoot(document.getElementById("root")).render(<Clock />);
 
 
 export default Clock;
