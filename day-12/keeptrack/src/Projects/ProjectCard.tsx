@@ -5,14 +5,16 @@ function formatDescription(description: string): string {
     return description.substring(0, 60) + '...';
 }
 
+
 interface ProjectCardProps {
     project: Project;
+    onEdit: (project: Project) => void;
 }
 
 function ProjectCard(props: ProjectCardProps) {
-    const { project } = props;
+    const { project,onEdit } = props;
     const handleEditClick = (projectBeingEdited: Project) => {
-        console.log(projectBeingEdited);
+        onEdit(projectBeingEdited);
     };
     return (
         <div className="card">
