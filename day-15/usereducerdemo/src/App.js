@@ -1,63 +1,30 @@
-import { useReducer } from "react";
-const todos1 = [
-  {
-    id: 1,
-    title: "Todo 1",
-    complete: false,
-  },
-  {
-    id: 2,
-    title: "Todo 2",
-    complete: false,
-  },
-];
+import { useCallback,useState } from "react";
+import { ReactDOM } from "react-dom/client";
+import Todos from './Todo';
 
-const reducer = function (state, action) {
-  switch (action.type) {
-    case "COMPLETE":
-      return state.map((todo) => {
-        if (todo.id === action.id) {
-          return { ...todo, complete: !todo.complete };
-        } else {
-          return todo;
-        }
-      })
-    default:
-      return state;
-  }
-}
+const App = () =>{
+    const [count,setCount] = useState(0);
+    const [todos,setTodos] = useState([]);
 
-function Todos() {//component
-  const [todos, dispatch] = useReducer(reducer, todos1); //initial state defined with useReduxer
+    const increment = () =>{
+        setCount((c) => c+1);
+    };
+    const addTodo = useCallback(() =>{//apply usecallback to avoid updates 
+        //to child components
+        setTodos((t) => [...t,"New Todo"]);
+    });
 
-  const handleComplete = (todo) => {
-    dispatch({ type: "COMPLETE", id: todo.id });
-  };
-
-  return (
-    <>
-      {todos.map((todo) => (
-        <div key={todo.id}>
-          <label>
-            <input
-              type="checkbox"
-              checked={todo.complete}
-              onChange={() => handleComplete(todo)}
-            />
-            {todo.title}
-          </label>
+    return (
+        <>
+        <Todos todos={todos} addTodo={addTodo}/>
+        <hr/>
+        <div>
+            Count:{count}
+            <button onClick={increment}>+</button>
         </div>
-      ))}
-    </>
-  );
-}
+        </>
+    );
+};
 
-
-function App() {
-  return (<div>
-    <Todos />
-  </div>
-  )
-}
 
 export default App;
