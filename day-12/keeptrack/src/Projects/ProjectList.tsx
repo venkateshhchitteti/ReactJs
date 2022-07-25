@@ -1,5 +1,5 @@
 // import React from 'react';
-import React, { useState } from 'react';
+import React, { Fragment, useState } from 'react';
 import { Project } from './Project';
 import ProjectCard from './ProjectCard';
 import ProjectForm from './ProjectForm';
@@ -28,9 +28,11 @@ function ProjectList({ projects, onSave }: ProjectListProps) {
   //         </ul>
   //       );
   return (
-    <div className="row">
+    <div data-testid="listLabel" className="row">
+       <label >List</label>
       {projects.map((project) => (
         <div key={project.id} className="cols-sm">
+         
           {/* <div className="card">
                 <img src={project.imageUrl} alt={project.name} />
                 <section className="section dark">
@@ -44,7 +46,7 @@ function ProjectList({ projects, onSave }: ProjectListProps) {
           {/* <ProjectCard project={project} onEdit={handleEdit}></ProjectCard>
               <ProjectForm/> */}
           {project === projectBeingEdited ? (
-            <ProjectForm onSave={onSave} onCancel={cancelEditing} />
+            <ProjectForm project={project} onSave={onSave} onCancel={cancelEditing} />
           ) : (
             <ProjectCard project={project} onEdit={handleEdit} />
           )}
