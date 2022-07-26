@@ -1,24 +1,58 @@
-import React from 'react';
-import { MOCK_PROJECTS } from './MockProjects';
-import ProjectList from './ProjectList';
+import React, { useEffect, useState } from 'react';
+import { projectAPI } from './ProjectAPI';
+import ProjectDetail from './ProjectDetails';
 import { Project } from './Project';
-import  { Fragment, useState } from 'react';
+import { useParams } from 'react-router-dom';
 
+function ProjectPage(props: any) {
+    const [loading, setLoading] = useState(false);
+    const [project, setProject] = useState<Project | null>(null);
+    const [error, setError] = useState<string | null>(null);
+    const params = useParams();
+    const id = Number(params.id);
 
-function ProjectsPage() {
-  //   return <h1>Projects</h1>;
-  const [projects, setProjects] = useState<Project[]>(MOCK_PROJECTS);
-  const saveProject = (project: Project) => {
-    // console.log('Saving project: ', project);
-  };
-  return (
-    <>
-      <h1>Projects</h1>
-      {/* <pre>{JSON.stringify(MOCK_PROJECTS, null, ' ')}</pre> */}
-      {/* <ProjectList onSave={saveProject} projects={MOCK_PROJECTS} /> */}
-      <ProjectList onSave={saveProject} projects={projects} />
-    </>
-  );
+    useEffect(() => {
+        setLoading(true);
+        projectAPI
+            .find(id)
+            .then((data) => {
+                setProject(data);
+                setLoading(false);
+            })
+            .catch((e) => {
+                setError(e);
+                setLoading(false);
+            });
+    }, [id]);
+
+    return (
+        <div>
+            <>
+                <h1>Project Detail</h1>
+
+                {loading && (
+                    <div className="center-page">
+                        <span className="spinner primary"></span>
+                        <p>Loading...</p>
+                    </div>
+                )}
+
+                {error && (
+                    <div className="row">
+                        <div className="card large error">
+                            <section>
+                                <p>
+                                    <span className="icon-alert inverse "></span> {error}
+                                </p>
+                            </section>
+                        </div>
+                    </div>
+                )}
+
+                {project && <ProjectDetail project={project} />}
+            </>
+        </div>
+    );
 }
 
-export default ProjectsPage;
+export default ProjectPage;
