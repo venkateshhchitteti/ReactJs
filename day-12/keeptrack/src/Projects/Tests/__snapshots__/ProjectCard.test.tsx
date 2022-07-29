@@ -4,7 +4,8 @@ import { MemoryRouter } from "react-router-dom";
 import { Project } from "../../Project";
 import ProjectCard from "../../ProjectCard";
 import userEvent from "@testing-library/user-event";
-import renderer from 'react-test-renderer';
+import { createRenderer } from "react-dom/test-utils";
+// import renderer from 'react-test-renderer';
 
 
 
@@ -54,24 +55,14 @@ describe("<ProjectCard />", () => {
         expect(handleEdit).toBeCalledWith(project);
     });
 
-    test("snapshot", () => {
-        const tree = renderer
-            .create(
-                <MemoryRouter>
-                    <ProjectCard project={project} onEdit={handleEdit} />
-                </MemoryRouter>
-            )
-            .toJSON();
-        expect(tree).toMatchSnapshot();
-    });
-    test('snapshot', () => {
-        const tree = renderer
-            .create(
-                <MemoryRouter>
-                    <ProjectCard project={project} onEdit={handleEdit} />
-                </MemoryRouter>
-            )
-            .toJSON();
-        expect(tree).toMatchSnapshot();
-    });
+    // test("snapshot", () => {
+    //     const tree = renderer.create(
+    //             <MemoryRouter>
+    //                 <ProjectCard project={project} onEdit={handleEdit} />
+    //             </MemoryRouter>
+    //         )
+    //         .toJSON();
+    //     expect(tree).toMatchSnapshot();
+    // });
+    
 });

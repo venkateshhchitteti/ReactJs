@@ -4,6 +4,8 @@ import { BrowserRouter, Link, Route, Routes } from "react-router-dom";
 import { MovieDetail, MovieList } from './Movie';
 import  {A} from './Movie';
 import Movie from './Movie';
+import { MovieList } from './Movie';
+const MovieList = lazy(()=> import('./Movie'));
 function App() {
   return (
     <BrowserRouter>

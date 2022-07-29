@@ -1,6 +1,6 @@
 import { Action } from 'redux';
 import { ThunkAction } from 'redux-thunk';
-import { projectAPI } from '../ProjectAPI';
+import { projectAPI } from '../projectAPI';
 import { Project } from '../Project';
 import {
   LOAD_PROJECTS_REQUEST,
